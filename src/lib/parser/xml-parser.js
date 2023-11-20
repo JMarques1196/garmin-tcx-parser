@@ -1,25 +1,24 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import { url } from "../../config/config";
 
-const Parser = () => {
-  const [xml, setXMl] = useState("");
-  let maxHeartRate = "";
+async function fetchUrl() {
+  const response = await fetch(url); // Fetch tcx file from provided url
+  const data = await response.text();
 
-  useEffect(() => {
-    fetch("./activity_12740341707.tcx") // grabs the tcx file from the public folder
-      .then((response) => response.text()) // converts content to string
-      .then((data) => {
-        setXMl(data);
-      });
-  }, []);
+  return data;
+}
 
-  if (xml) {
+export function returnUrl(metric) {
+  let i = fetchUrl(metric).then((data) => {
+    //Parse received data
     const parser = new DOMParser();
-    const doc = parser.parseFromString(xml, "text/xml"); // parse string to DOM
-    maxHeartRate = doc.querySelector("MaximumHeartRateBpm").textContent;
-  }
+    const doc = parser.parseFromString(data, "text/xml");
+    let filterByMetric = doc.querySelectorAll(metric);
+    let parsedData = [];
 
-  return <div>console.log({maxHeartRate})</div>;
-};
-
-export default Parser;
+    for (let i = 0; i < filterByMetric.length; i++) {
+      parsedData[i] = filterByMetric[i].textContent;
+    }
+    return parsedData;
+  });
+  return i;
+}
