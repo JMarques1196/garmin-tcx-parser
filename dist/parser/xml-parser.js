@@ -1,0 +1,31 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.returnMetric = returnMetric;
+require("core-js/modules/es.promise.js");
+require("core-js/modules/es.string.trim.js");
+require("core-js/modules/es.regexp.exec.js");
+require("core-js/modules/es.string.replace.js");
+var _config = require("../../config/config");
+async function fetchUrl() {
+  const response = await fetch(_config.url); // Fetch tcx file from provided url
+  const data = await response.text();
+  return data;
+}
+function returnMetric(metric) {
+  let i = fetchUrl(metric).then(data => {
+    //Parse received data
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, "text/xml");
+    let filterByMetric = doc.querySelectorAll(metric);
+    let parsedData = [];
+    for (let i = 0; i < filterByMetric.length; i++) {
+      parsedData[i] = filterByMetric[i].textContent.replace(/[\n\r]+|[\s]{2,}/g, " ") // regex for removing spaces or new lines
+      .trim();
+    }
+    return parsedData;
+  });
+  return i;
+}
