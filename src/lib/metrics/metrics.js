@@ -1,6 +1,9 @@
-import { returnUrl } from "../parser/xml-parser";
+import { returnMetric } from "../parser/xml-parser";
 
-export const MaximumHeartRateBpm = await returnUrl("MaximumHeartRateBpm");
-export const HeartRateBpm = await returnUrl("HeartRateBpm");
-export const AverageHeartRateBpm = await returnUrl("AverageHeartRateBpm");
-export const Position = await returnUrl("Position");
+export const MaximumHeartRateBpm = await returnMetric("MaximumHeartRateBpm");
+export const HeartRateBpm = await returnMetric("HeartRateBpm");
+export const AverageHeartRateBpm = await returnMetric("AverageHeartRateBpm");
+export const Position = await returnMetric("Position");
+export const TotalTimeSeconds = await returnMetric("TotalTimeSeconds");
+export const DistanceMeters = await returnMetric("DistanceMeters");
+export const AltitudeMeters = await returnMetric("AltitudeMeters");

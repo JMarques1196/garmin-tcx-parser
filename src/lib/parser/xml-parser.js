@@ -7,7 +7,7 @@ async function fetchUrl() {
   return data;
 }
 
-export function returnUrl(metric) {
+export function returnMetric(metric) {
   let i = fetchUrl(metric).then((data) => {
     //Parse received data
     const parser = new DOMParser();
