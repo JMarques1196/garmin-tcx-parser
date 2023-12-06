@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/JMarques1196/react-tcx/issues"
   },
-  "homepage": "https://github.com/JMarques1196/react-tcx#readme"
+  "homepage": "https://github.com/JMarques1196/react-tcx#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
