@@ -1,6 +1,6 @@
 import { url } from "../../config/config";
 
-async function fetchUrl() {
+export async function fetchUrl() {
   const response = await fetch(url); // Fetch tcx file from provided url
   const data = await response.text();
 

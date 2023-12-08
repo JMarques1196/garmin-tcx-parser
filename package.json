@@ -4,7 +4,9 @@
   "description": "this package grabs info from tcx files",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx rollup -c"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,15 @@
   "homepage": "https://github.com/JMarques1196/react-tcx#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rollup": "^4.6.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "npm": "^10.2.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   }
 }
