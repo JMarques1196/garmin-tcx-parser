@@ -7,3 +7,5 @@ export const Position = await returnMetric("Position");
 export const TotalTimeSeconds = await returnMetric("TotalTimeSeconds");
 export const DistanceMeters = await returnMetric("DistanceMeters");
 export const AltitudeMeters = await returnMetric("AltitudeMeters");
+export const Calories = await returnMetric("Calories");
+export const MaximumSpeed = await returnMetric("MaximumSpeed");

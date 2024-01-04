@@ -1,5 +1,5 @@
 {
-  "name": "react-tcx",
+  "name": "garmin-tcx-parser",
   "version": "1.0.1",
   "description": "Convert Garmin's Tcx files into usable data for your projects.",
   "main": "index.js",
