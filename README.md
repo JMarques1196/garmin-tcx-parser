@@ -9,6 +9,8 @@ Available Metrics:
 - Total Time in seconds
 - Distance in meters
 - Altitude in meters
+- Calories
+- Maximum Speed
 
 
 ## Install
@@ -39,7 +41,11 @@ Import metrics:
     
     DistanceMeters,
     
-    AltitudeMeters
+    AltitudeMeters,
+
+    Calories,
+
+    Maximum Speed
     
   } from "garmin-tcx-parser/src/index";
 ```
