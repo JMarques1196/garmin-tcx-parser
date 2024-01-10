@@ -16,9 +16,11 @@ export function returnMetric(metric) {
     let parsedData = [];
 
     for (let i = 0; i < filterByMetric.length; i++) {
-      parsedData[i] = filterByMetric[i].textContent
-        .replace(/[\n\r]+|[\s]{2,}/g, " ") // regex for removing spaces or new lines
-        .trim();
+      parsedData[i] = parseInt(
+        filterByMetric[i].textContent
+          .replace(/[\n\r]+|[\s]{2,}/g, " ") // regex for removing spaces or new lines
+          .trim()
+      );
     }
     return parsedData;
   });
