@@ -2,7 +2,8 @@
   "name": "garmin-tcx-parser",
   "version": "1.0.4",
   "description": "Convert Garmin's Tcx files into usable data for your projects.",
-  "main": "index.js",
+  "main": "./src/index.js",
+  "types": "./index.js.d.ts",
   "scripts": {
     "start": "npm start",
     "test": "echo \"Error: no test specified\" && exit 1",
