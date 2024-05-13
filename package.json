@@ -1,6 +1,6 @@
 {
   "name": "garmin-tcx-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Convert Garmin's Tcx files into usable data for your projects.",
   "main": "./src/index.js",
   "types": "./index.js.d.ts",
