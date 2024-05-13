@@ -47,5 +47,5 @@ Import metrics:
 
     Maximum Speed
     
-  } from "garmin-tcx-parser/src/index";
+  } from "garmin-tcx-parser";
 ```
