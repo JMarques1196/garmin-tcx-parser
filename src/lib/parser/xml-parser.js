@@ -13,16 +13,22 @@ export function returnMetric(metric) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "text/xml");
     let filterByMetric = doc.querySelectorAll(metric);
+    let parsedDate = "";
     let parsedData = [];
 
-    for (let i = 0; i < filterByMetric.length; i++) {
-      parsedData[i] = parseInt(
-        filterByMetric[i].textContent
-          .replace(/[\n\r]+|[\s]{2,}/g, " ") // regex for removing spaces or new lines
-          .trim()
-      );
+    if (metric === "Id") {
+      parsedDate = filterByMetric[0].textContent.slice(0, 10);
+      return parsedDate;
+    } else {
+      for (let i = 0; i < filterByMetric.length; i++) {
+        parsedData[i] = parseInt(
+          filterByMetric[i].textContent
+            .replace(/[\n\r]+|[\s]{2,}/g, " ") // regex for removing spaces or new lines
+            .trim()
+        );
+      }
+      return parsedData;
     }
-    return parsedData;
   });
   return i;
 }
